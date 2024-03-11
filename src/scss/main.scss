@@ -1,0 +1,48 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+
+@import '../lib/swiper/swiper-bundle.min';
+
+
+@import 'base/reset';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/animation';
+
+
+@import 'components/button';
+@import 'components/nav';
+@import 'components/slider';
+@import 'components/tab';
+@import 'components/accordion';
+@import 'components/popup';
+
+
+@import 'layout/layout';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'layout/sections/reasons';
+@import 'layout/sections/product-line';
+@import 'layout/sections/indication';
+@import 'layout/sections/specialists';
+@import 'layout/sections/section-video';
+@import 'layout/sections/banner';
+@import 'layout/sections/section-advantages';
+@import 'layout/sections/section-SARS';
+@import 'layout/sections/intro';
+@import 'layout/sections/treatment';
+@import 'layout/sections/actions';
+@import 'layout/sections/scientific-works';
+@import 'layout/sections/app-method';
+@import 'layout/sections/section-effect';
+
+
+@import 'pages/single-article';
+@import 'pages/page-disease';
+@import 'pages/page-specialists';
+@import 'pages/application';
+@import 'pages/404';
+

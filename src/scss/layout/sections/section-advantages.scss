@@ -1,0 +1,153 @@
+.section-advantages {
+  .slogan {
+    font-weight: 500;
+    font-size: 63px;
+    line-height: 1.17;
+    color: #46ba00;
+    margin-bottom: 27px;
+  }
+
+  .big-text {
+    font-size: 70px;
+  }
+}
+
+.advantages {
+  display: flex;
+  justify-content: space-between;
+  max-width: 920px;
+  width: 100%;
+  margin: -60px auto 0;
+  padding-bottom: 195px;
+  position: relative;
+  z-index: 1;
+
+  &__item {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #46ba00;
+    max-width: 250px;
+    width: 100%;
+    padding: 10px;
+
+  }
+
+  &__icon {
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    width: 97px;
+    height: 97px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 53px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@include respond-to($lg) {
+  .section-advantages {
+    .slogan {
+      font-size: 50px;
+    }
+
+    .big-text {
+      font-size: 55px;
+    }
+  }
+}
+
+@include respond-to($md) {
+  .section-advantages {
+    .slogan {
+      order: -1;
+      font-size: 35px;
+    }
+
+    .big-text {
+      font-size: 45px;
+      display: block;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .home .advantages {
+    position: relative;
+    display: block;
+    max-width: 420px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    margin: 0 auto;
+
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 150vw;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1827px;
+      background: linear-gradient(0deg, rgba(94, 226, 47, 0) 0%, #48BF00 100%);
+      z-index: -1;
+    }
+
+    &__item {
+      max-width: 420px;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    &__icon {
+      flex-shrink: 0;
+    }
+
+    &__text {
+      padding-left: 30px;
+      text-align: left;
+    }
+  }
+  .application .advantages{
+    &__text {
+      padding-left: 30px;
+      padding-right: 0;
+    }
+  }
+}
+
+@include respond-to($xs) {
+  .application .advantages,
+  .advantages {
+    &__icon {
+      width: 72px;
+      height: 72px;
+      background-size: 40px 40px;
+    }
+
+    &__item {
+      padding-left: 0;
+      padding-right: 0;
+
+      &:nth-child(3) {
+        .advantages__icon {
+          background-size: 49px 49px;
+        }
+      }
+    }
+  }
+  .section-advantages {
+    .slogan {
+      font-size: 18px;
+
+      .big-text {
+        font-size: 34px;
+      }
+    }
+  }
+}

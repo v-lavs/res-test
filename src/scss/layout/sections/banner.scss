@@ -1,0 +1,171 @@
+.banner {
+  position: relative;
+  padding-top: 116px;
+  border-bottom: 2px solid #eaeaea;
+  .banner__link {
+    z-index: 4;
+  }
+
+  .overlay {
+    position: absolute;
+    width: 50vw;
+    top: 0;
+    bottom: 0;
+
+      content: '';
+      display: block;
+      -webkit-transition: transform 1.25s;
+      transition: transform 1.25s;
+
+    &-right {
+      background: linear-gradient(270deg, #46BA00 0%, #61DB36 0%, rgba(97, 219, 54, 0) 100%);
+      transform: translateX(100%);
+      right: 0;
+    }
+
+
+    &-left {
+      left: 0;
+      background: linear-gradient(90deg, #46BA00 0%, #61DB36 0%, rgba(97, 219, 54, 0) 100%);
+      transform: translateX(-100%);
+    }
+
+    &.active {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  &__wrap-img {
+    position: relative;
+  }
+
+  &__block_mob {
+    display: none;
+  }
+
+  &__img-shadow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 0;
+  }
+
+  &__img {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__link {
+    
+    position: absolute;
+    display: inline-block;
+    color: #eaeaea;
+    font-size: 27px;
+    line-height: 1.18;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    
+    &.text-white {
+      color: #fff;
+    }
+
+    &.to-left {
+      text-align: right;
+      left: 0;
+      transform: translate(-100%, -50%);
+    }
+  }
+
+  .big-text {
+    font-weight: 500;
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 1660px) {
+  .banner {
+    &__link-text {
+      display: none;
+    }
+  }
+}
+
+@include respond-to($xl) {
+  .banner {
+    &__link.to-left,
+    &__link {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@include respond-to($md) {
+  .banner {
+    padding-bottom: 96px;
+    border: none;
+
+    .big-text {
+      font-weight: 500;
+      font-size: 45px;
+    }
+
+    .overlay {
+      display: none;
+    }
+
+    &__block_mob {
+      display: block;
+    }
+
+    &__wrap-img.banner__wrap-img_desk {
+      display: none;
+    }
+
+    &__link {
+      position: static;
+      display: block;
+      transition: color .5s;
+      transform: none;
+      text-align: center;
+      color: #cfcfcf;
+      padding-top: 20px;
+
+      &:hover,
+      &:focus {
+        color: #46ba00;
+      }
+    }
+  }
+}
+
+@include respond-to($sm) {
+  .banner {
+    &__link {
+      font-size: 19px;
+    }
+
+    .big-text {
+      font-size: 27px;
+    }
+  }
+
+}
+
+@include respond-to($xs) {
+  .banner {
+    padding-top: 60px;
+
+    &__link {
+      font-size: 19px;
+    }
+
+    .big-text {
+      font-size: 27px;
+    }
+  }
+
+}

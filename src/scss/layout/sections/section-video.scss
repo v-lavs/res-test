@@ -1,0 +1,138 @@
+.section-video {
+  background-image: url(../assets/img/sec-video.png);
+  background-repeat: no-repeat;
+  background-position: center bottom 120px;
+  background-size: cover;
+  padding-top: 170px;
+  padding-bottom: 270px;
+}
+
+.desktop {
+  position: relative;
+  display: flex;
+  min-height: 550px;
+  max-width: 876px;
+  padding-bottom: 68px;
+  margin: 0 auto;
+
+  &:after,
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    z-index: 0;
+  }
+
+  &:before {
+    background-image: url(../assets/img/stand.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 330px;
+    height: 130px;
+  }
+
+  &:after {
+    width: 100vw;
+    height: 1px;
+    background-color: #b3b3b3;
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    border: 1px solid #c1c1c1;
+    border-radius: 30px;
+  }
+
+  .wrap-video {
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    top: 25px;
+    border-radius: 17px;
+    padding-top: 49%;
+    overflow: hidden;
+  }
+
+  video {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@include respond-to($md) {
+  .desktop {
+    min-height: 446px;
+  }
+}
+
+@include respond-to($sm) {
+  .section-video {
+    padding-top: 225px;
+    background: url(../assets/img/bg-mob-video-1.png)  0 38px /270px 296px no-repeat,
+    url(../assets/img/bg-mob-video-2.png)  right  72px /157px 147px no-repeat;
+    padding-bottom: 150px
+  }
+  .desktop {
+    min-height: 374px;
+  }
+}
+
+@include respond-to($xs) {
+  .section-video {
+    padding-bottom: 114px
+  }
+  .desktop {
+    min-height: 270px;
+    padding-bottom: 30px;
+
+    &:before {
+      width: 143px;
+      height: 56px;
+    }
+    &:after{
+      width: 100%;
+      background: radial-gradient(circle,#54C32D 80%,rgba(255,255,255,0) 100%);
+    }
+
+    .wrap-video {
+      left: 13px;
+      right: 13px;
+      bottom: 13px;
+      top: 13px;
+      padding-top: 40%;
+    }
+  }
+  .btn_play {
+    width: 80px;
+    height: 61px;
+  }
+}
+
+@include respond-to($xxs) {
+  .desktop {
+    min-height: 220px;
+    margin: 0 -13px;
+  }
+}
+
+@media screen and (max-width: 360px){
+  .section-video{
+    background: url(../assets/img/bg-mob-video-1.png) 0 38px/220px 246px no-repeat,
+    url(../assets/img/bg-mob-video-2.png) right 72px/107px 97px no-repeat;
+  }
+
+}

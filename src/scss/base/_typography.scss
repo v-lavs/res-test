@@ -1,0 +1,77 @@
+.heading {
+  font-size: 45px;
+  font-weight: 500;
+  &_xxl {
+    font-size: 79px;
+  }
+  &_xl {
+    font-size: 70px;
+  }
+
+  &_lg {
+    font-size: 55px;
+  }
+
+  &_md {
+    font-size: 50px;
+  }
+
+  &_sm {
+    font-size: 43px;
+  }
+
+  &_xs {
+    font-size: 37px;
+  }
+}
+
+.text {
+  &_xs {
+    font-size: 10px;
+  }
+
+  &_sm {
+    font-size: 15px;
+  }
+
+  &_lg {
+    font-size: 26px;
+  }
+  &_xl{
+    font-size: 65px;
+  }
+}
+
+@include respond-to($lg){
+  .heading {
+
+    &_md {
+      font-size: 40px;
+    }
+  }
+}
+
+@include respond-to($md){
+  .heading {
+    font-size: 37px;
+    &_md {
+      font-size: 37px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .heading,
+  .heading_md{
+    font-size: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+

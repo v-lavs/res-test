@@ -1,0 +1,101 @@
+.page-404 {
+  line-height: 1.17;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  .d-flex {
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  .part {
+    width: 50%;
+
+    &_left {
+      font-size: 350px;
+      letter-spacing: 0.05em;
+      color: #46ba00;
+    }
+
+    &_right {
+      padding-left: 165px;
+    }
+  }
+
+  .block-link {
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+    color: #000000;
+    padding-top: 115px;
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+  .text_xl {
+    font-weight: 500;
+    margin-bottom: 44px;
+  }
+}
+
+@include respond-to($lg) {
+  .page-404 {
+    .text_xl {
+      font-size: 39px;
+    }
+
+    .part_left {
+      font-size: 256px;
+    }
+
+    .part_right {
+      padding-left: 108px;
+    }
+  }
+}
+
+@include respond-to($md) {
+  .page-404 {
+    .part {
+      width: 100%;
+      text-align: center;
+    }
+
+    .part_right {
+      padding-left: 0;
+
+      .text_xl {
+        margin-bottom: 0;
+      }
+    }
+
+    .block-link {
+      padding-top: 60px;
+    }
+  }
+}
+
+@include respond-to($xs) {
+  .page-404 {
+
+    .part_right {
+      .text_xl {
+        font-size: 30px;
+      }
+    }
+
+    .part_left {
+      font-size: 140px;
+    }
+
+    .block-link {
+      font-size: 20px;
+      padding-top: 30px;
+    }
+  }
+}

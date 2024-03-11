@@ -1,0 +1,7 @@
+git init # IntelliJ project files
+.idea
+node_modules
+out
+gen
+kit
+kit.html

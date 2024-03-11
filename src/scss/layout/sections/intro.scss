@@ -1,0 +1,141 @@
+.section-intro {
+  padding-top: 100px;
+
+  .container {
+    align-items: flex-end;
+  }
+
+  .heading {
+    font-weight: 500;
+    line-height: 1.12;
+    margin-bottom: 14px;
+  }
+
+  .section__text {
+    margin-bottom: 30px;
+  }
+
+  .part_right {
+    width: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 545px;
+  }
+
+  .part_left {
+    width: 40%;
+    padding-bottom: 80px;
+  }
+
+  .btn {
+    margin-right: 17px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.signs-cold {
+  display: flex;
+  width: calc(95% - 60px);
+  max-width: 1376px;
+  padding: 15px 10px 16px;
+  background: #54C32D;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.07);
+  border-radius: 9px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 24px;
+  margin: 65px auto 117px;
+
+  &__inner {
+    padding: 15px 75px 0;
+    border-right: 1px solid #ffffff;
+    flex-grow: 1;
+
+    &:last-child {
+      border: 0;
+    }
+  }
+
+
+  &__item {
+    margin-bottom: 10px;
+  }
+}
+
+@include respond-to($xl) {
+  .signs-cold {
+    &__item {
+      margin-bottom: 15px;
+    }
+
+    &__inner {
+      padding-left: 36px;
+      padding-right: 36px;
+    }
+  }
+}
+
+@include respond-to($md) {
+  .signs-cold {
+    width: 100%;
+    font-size: 20px;
+  }
+
+}
+
+@include respond-to($sm) {
+  .signs-cold {
+    display: block;
+    padding-top: 26px;
+
+    &__inner {
+      border-right: none;
+      padding-top: 0;
+
+      &:not(:first-child) {
+        .signs-cold__item {
+          display: inline-block;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    &__item {
+      position: relative;
+      padding-left: 16px;
+
+      &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        left: 0;
+        top: 15px;
+        z-index: 1;
+      }
+    }
+  }
+
+}
+
+@include respond-to($xs) {
+  .signs-cold {
+    font-size: 17px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 90px;
+
+    &__item {
+      &:before {
+        top: 10px;
+      }
+    }
+  }
+ }

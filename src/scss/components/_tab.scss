@@ -1,0 +1,168 @@
+.tabs-slider {
+  overflow: visible;
+}
+
+.tabs {
+  position: relative;
+  width: 100%;
+
+  &:after {
+    position: absolute;
+    content: '';
+    background: linear-gradient(15deg, #61DB36 0%, #FFFFFF 100%);
+    opacity: 0.86;
+    filter: blur(40px);
+    width: 254px;
+    height: 254px;
+    border-radius: 50%;
+    right: -40%;
+    bottom: 12%;
+    z-index: -1;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+
+    &-link {
+      cursor: pointer;
+      background: #fafafa;
+      border: 1px solid #b3b3b3;
+      border-radius: 22px;
+      padding: 35px 37px 26px;
+      max-width: 342px;
+      width: 30%;
+
+      .title {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 1.1;
+        color: #B2B2B2;
+
+        span {
+          font-weight: 400;
+          font-size: 22px;
+        }
+      }
+
+      .icon {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 64px;
+        height: 74px;
+        margin-bottom: 20px;
+        opacity: .3;
+
+        svg {
+          max-width: 100%;
+          height: auto;
+        }
+
+      }
+
+      &.active {
+        background: #D4FFC5;
+        border-color: #46BA00;
+        box-shadow: 0 0 40px rgba(97, 219, 54, 0.39);
+
+        .title {
+          color: #46BA00;
+        }
+
+        .icon {
+          opacity: 1;
+        }
+
+        .hover-green {
+          fill: #46BA00;
+          stroke: #46BA00;
+        }
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+
+  }
+
+  &__content-item {
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    align-items: center;
+    font-size: 75px;
+
+    &.active {
+      position: relative;
+      opacity: 1;
+      transition: opacity .5s ease-in;
+      z-index: 2;
+    }
+  }
+
+  @include respond-to($md) {
+    .tabs__nav-link .title {
+      font-size: 25px;
+    }
+  }
+
+  @include respond-to($sm) {
+    .tabs-slider {
+      padding-bottom: 44px;
+      max-width: 300px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .tabs__nav {
+      justify-content: flex-start;
+      width: auto;
+
+      &.bg-grey:before {
+        display: none;
+      }
+    }
+    .swiper-slide {
+      width: 100%;
+      max-width: 100%;
+      padding: 23px 23px 17px;
+    }
+  }
+
+  @include respond-to($xs) {
+    &:after {
+      display: none;
+    }
+
+    .tabs__nav-link {
+      .title {
+        font-size: 25px;
+        line-height: .8;
+
+        span {
+          font-size: 16px;
+        }
+      }
+
+      .icon {
+        width: 38px;
+        height: 45px;
+      }
+    }
+  }
+  @include respond-to($xxs) {
+    .tabs__nav {
+      width: 209px;
+      margin: 0 auto;
+    }
+  }
+}
